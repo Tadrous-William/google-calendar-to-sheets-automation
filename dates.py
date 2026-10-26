@@ -72,7 +72,7 @@ for event in events:
 
 # --- Write data into Google Sheets ---
 if len(data) > 1:
-    sheet.update("A1", data)
+    sheet.update(range_name="A1", values=data)   # keyword form works in gspread 5 and 6
     print(f"{len(data)-1} events fetched from Google Calendar and written to Google Sheets!")
 else:
     print("No events found in the given time range.")
